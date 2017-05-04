@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  get 'posts/index'
+  # get 'posts/index'
 
-  get 'posts/create'
+  # get 'posts/create'
 
-  get 'posts/update'
+  # get 'posts/update'
+
+ resources :posts ,defaults: {format: :json}
 
   devise_for :users
 
@@ -11,3 +13,5 @@ Rails.application.routes.draw do
 root to: 'client#index'
 get '*path', to: 'client#index'
 end
+
+
