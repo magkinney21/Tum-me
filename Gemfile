@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'turbolinks'
 gem 'rails-angular-material'
-gem 'angular_rails_csrf'
+gem 'angularjs-rails'
 gem 'bootstrap-sass'
 
 # Use Capistrano for deployment

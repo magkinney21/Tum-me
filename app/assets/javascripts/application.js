@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require angular
 //= require angular/angular
 //= require angular-material
 //= require angular-ui-router/release/angular-ui-router
@@ -24,6 +25,23 @@ angular
       .state('home', {
         url: '/',
         component: 'homePage'
+      })
+      $stateProvider
+      .state('postsIndex', {
+        url: '/posts',
+        component: 'postsIndex'
+      })
+      .state('postsShow', {
+        url: '/posts/:id',
+        component: 'postsShow'
+      })
+      .state('postsNew', {
+        url: '/posts/new',
+        component: 'postsNew'
+      })
+      .state('postsEdit', {
+        url: '/posts/:id/edit',
+        component: 'postsEdit'
       });
 
     // default fall back route

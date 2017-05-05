@@ -1,0 +1,8 @@
+<div class="post">
+  <h3 class="post__title">{{ $ctrl.postObject.title }}</h3>
+  <p class="post__content">
+    {{$ctrl.postObject.content}}
+  </p>
+  <a href="/posts/edit">Edit</a>
+  <a href="/posts/{{ $ctrl.postObject.id }}">Show</a>
+</div>
