@@ -1,17 +1,16 @@
 Rails.application.routes.draw do
-  # get 'posts/index'
-
-  # get 'posts/create'
-
-  # get 'posts/update'
-
- resources :posts ,defaults: {format: :json}
-
   devise_for :users
 
+  namespace :api do
+    resources :posts # , defaults: {format: :json}
+  end
 
-root to: 'client#index'
-get '*path', to: 'client#index'
+
+
+
+
+  root to: 'client#index'
+  get '*path', to: 'client#index'
 end
 
 
