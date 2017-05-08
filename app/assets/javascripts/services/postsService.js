@@ -1,8 +1,8 @@
 angular
   .module('TumMe')
-  .factory('postsServices', postsServices);
+  .factory('postsService', postsService);
 
-postsServices.$inject = ['$http'];
+postsService.$inject = ['$http'];
 
 function postsService($http) {
   var factory = {};

@@ -1,10 +1,10 @@
 angular
  .module('TumMe')
- .controller('PostsIndexController', PostsIndexController);
+ .controller('PostIndexController', PostIndexController);
 
-PostsIndexController.$inject = ['postsService'];
+PostIndexController.$inject = ['postsService'];
 
-function PostsIndexController(postsService) {
+function PostIndexController(postsService) {
     var vm = this;
     vm.posts = [];
 

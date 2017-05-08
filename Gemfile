@@ -31,9 +31,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'turbolinks'
+gem 'angular_rails_csrf'
 gem 'rails-angular-material'
-gem 'angularjs-rails'
-gem 'bootstrap-sass'
+# gem 'bootstrap-sass'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -12,11 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require angular
 //= require angular/angular
-//= require angular-material
-//= require angular-ui-router/release/angular-ui-router
+// = require angular-ui-router/release/angular-ui-router
+//= require turbolinks
+//= require_self
 //= require_tree .
 angular
   .module('TumMe', ['ui.router'])
