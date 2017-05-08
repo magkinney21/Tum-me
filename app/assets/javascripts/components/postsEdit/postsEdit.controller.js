@@ -2,7 +2,7 @@ angular
  .module('TumMe')
  .component('postsEdit', {
   templateUrl: '<%= asset_path("components/postsEdit/postEdit") %>',
-  controller: 'EditController'
+  controller: 'PostsEditController'
  });
 
 

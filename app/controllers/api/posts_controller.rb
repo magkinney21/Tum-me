@@ -1,5 +1,5 @@
 class Api::PostsController < ApplicationController
-
+before_action :authenticate_user!
   def index
     @posts = Post.all
     render json: @posts
@@ -12,6 +12,7 @@ class Api::PostsController < ApplicationController
 
 
   def create
+
     @post = Post.new(post_params)
       if @post.save
         render json: @post, status: :created

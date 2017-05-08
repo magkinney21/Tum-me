@@ -9,6 +9,6 @@ function PostShowController(postsService) {
   vm.post = {};
 
   $http.get().then(function(resp) {
-    vm.note = resp.data;
+    vm.post = resp.data;
   });
 }
