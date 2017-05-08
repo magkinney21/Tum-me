@@ -13,16 +13,16 @@ function PostsEditController($http, $stateParams, $state) {
 
   vm.note = {};
 
-  vm.saveNote = saveNote;
+  vm.savePost = savePost;
 
-  $http.get('/api/notes/' + $stateParams.id).then(function(resp) {
-    vm.note = resp.data;
+  $http.get('/api/posts/' + $stateParams.id).then(function(resp) {
+    vm.post = resp.data;
   });
 
-  function saveNote() {
-    $http.put('/api/notes/' + $stateParams.id, vm.note).then(function(resp) {
+  function savePost() {
+    $http.put('/api/posts/' + $stateParams.id, vm.post).then(function(resp) {
       if(resp.status == 200) {
-        $state.go('notesShow', { id: resp.data.id })
+        $state.go('postsShow', { id: resp.data.id })
       } else {
         alert('Something went wrong when trying to update')
       }
