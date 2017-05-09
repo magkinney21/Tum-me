@@ -10,6 +10,9 @@ function postsService($http) {
   factory.getPosts = function() {
     return $http.get('api/posts');
   };
+  factory.getComments = function() {
+    return $http.get('api/posts/:post_id/comments');
+  };
   factory.getPost = function(id) {
     return $http.get('/api/posts' + id);
   }

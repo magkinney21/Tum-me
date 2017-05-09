@@ -2,11 +2,11 @@ class Api::PostsController < ApplicationController
 before_action :authenticate_user!
   def index
     @posts = Post.all
-    render json: @posts
+    render json: @posts.to_json(include: :comments)
   end
 
   def show
-    @post = current_user.post.find(parmas[:id])
+    @post = current_user.post.find(params[:id])
     render json: @post
   end
 
