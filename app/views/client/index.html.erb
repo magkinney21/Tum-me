@@ -6,16 +6,63 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   </head>
 
   <body ng-app="TumMe">
-    <nav>
-      <% if user_signed_in? %>
-        <%= link_to 'Home', root_path %>
-        <%= link_to 'Edit account', edit_user_registration_path, target: '_self' %>
-        <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', target: '_self' %>
-      <% end %>
+<!--     <nav>
+      <%# if user_signed_in? %>
+        <%#= link_to 'Home', root_path %>
+        <%#= link_to 'Edit account', edit_user_registration_path, target: '_self' %>
+        <%#= link_to 'Sign out', destroy_user_session_path, method: 'delete', target: '_self' %>
+      <%# end %>
+    </nav> -->
+
+
+
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<% if user_signed_in? %>
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">TumMe</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" <%= link_to 'Home', root_path %></a>
+        <a class="mdl-navigation__link" <%= link_to 'Edit account', edit_user_registration_path, target: '_self' %></a>
+        <a class="mdl-navigation__link" <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', target: '_self' %></a>
+        <a class="mdl-navigation__link" href="">Sign-in</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Current Username</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">Profile</a>
+      <a class="mdl-navigation__link" href="">Recipes</a>
+      <a class="mdl-navigation__link" href="">Support/Advice</a>
+      <a class="mdl-navigation__link" href="">About</a>
     </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content"><!-- Your content goes here --></div>
+  </main>
+    <% end %>
+</div>
+
+
+
+
+
+
+
+
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
